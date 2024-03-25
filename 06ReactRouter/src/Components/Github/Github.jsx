@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
 
 function Github() {
-    //const data=useLoaderData()
-    const [data,setData]=useState([])
-    useEffect(()=>{
-        fetch("https://api.github.com/users/Sairaj-97")
-        .then(res=>res.json())
-        .then(data=>setData(data))
-    },[])
+    const data=useLoaderData()
+    // const [data,setData]=useState([])
+    // useEffect(()=>{
+    //     fetch("https://api.github.com/users/Sairaj-97")
+    //     .then(res=>res.json())
+    //     .then(data=>setData(data))
+    // },[])
   return (
     <>
      <div className="flex flex-col ">
@@ -21,8 +21,8 @@ function Github() {
 }
 
 export default Github
+export const githubDataLoad=async()=>{
+    const res=await fetch("https://api.github.com/users/Sairaj-97")
+    return res.json()
+}
 
-// export const githubDataLoad=async()=>{
-//     const res=await fetch("https://api.github.com/users/Sairaj-97")
-//     return res.json()
-// }

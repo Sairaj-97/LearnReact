@@ -7,7 +7,8 @@ import Home from './Components/Home/Home'
 import About from './Components/About/About'
 import Contact from './Components/Contact/Contact'
 import Github from './Components/Github/Github'
-//import { githubDataLoad } from './Components/Github/Github'
+import { githubDataLoad } from './Components/Github/Github'
+import UseParamUser from './Components/UseParamUser/UseParamUser'
 
 const router=createBrowserRouter([
   {
@@ -29,7 +30,11 @@ const router=createBrowserRouter([
       {
         path:"github",
         element:<Github/>,
-        //loader:{githubDataLoad}
+        loader:githubDataLoad
+      },
+      {
+        path:"user/:userid",
+        element:<UseParamUser/>
       }
     ]
   }
