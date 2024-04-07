@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import NameContext from '../Contexts/NameContext'
 
 function Display({displayName}) {
+  const{deleteName}=useContext(NameContext)
   return (
     <>
-      <div className='bg-black text-white flex justify-center mt-3'>
-        <h1>{displayName}</h1>
+      <div className=' flex justify-center mt-3'>
+        <h1 className='bg-blue-600 text-white w-48 text-left p-2'>{displayName.name}</h1>
+        <button className='bg-black text-white ml-4 p-2 rounded-md hover:bg-red-700'
+        onClick={()=>deleteName(displayName.id)}
+        >
+
+          Delete
+        </button>
       </div>
     </>
   )
