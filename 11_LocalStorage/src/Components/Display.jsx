@@ -10,7 +10,6 @@ function Display({displayName}) {
         <button className='bg-black text-white ml-4 p-2 rounded-md hover:bg-red-700'
         onClick={()=>deleteName(displayName.id)}
         >
-
           Delete
         </button>
       </div>

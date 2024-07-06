@@ -6,7 +6,7 @@ import React from "react";
 //--passing default value to a varible--
 //if we want to pass a default valuee to a variable , we can use this, function Cards({userName="default username of your choice"}),
 //here what happens is that if when calling <Cards/> in app.jsx , we dnt pass any value for username , it will rint the default value. 
-function Card({userName="Default",btnText}){
+function Card(props){
     return(
         <div class="relative h-[400px] w-[300px] rounded-md mt-20">
         <img
@@ -16,13 +16,13 @@ function Card({userName="Default",btnText}){
         />
         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
         <div class="absolute bottom-4 left-4 text-left">
-          <h1 class="text-lg font-semibold text-white">{userName}</h1>
+          <h1 class="text-lg font-semibold text-white">{props.userName}</h1>
           <p class="mt-2 text-sm text-gray-300">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
             debitis?
           </p>
           <button class="mt-2 inline-flex cursor-pointer items-center text-sm font-semibold text-black">
-            {btnText} →
+            {props.btnText} →
           </button>
         </div>
       </div>

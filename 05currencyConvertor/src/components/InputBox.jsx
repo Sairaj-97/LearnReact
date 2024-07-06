@@ -7,7 +7,7 @@ function InputBox({
     onAmountChange,
     onCurrencyChange,
     currencyOptions=[],
-    selectCurrency="USD",
+    selectCurrency,
     
 }) {
    const amountInputId=useId()
@@ -38,7 +38,7 @@ function InputBox({
                     value={selectCurrency}
                 >
                 {/* whwnever you loop in react make sure to use Key*/}
-                {{currencyOptions}.map((currency)=>(
+                {currencyOptions.map((currency)=>(
                     <option key={currency} value={currency}>
                         {currency}
                     </option>
